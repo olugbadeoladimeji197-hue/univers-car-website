@@ -1,0 +1,575 @@
+/* =========================
+   1. GENERAL STYLING
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --background: #f7f8f5;
+    --white: #ffffff;
+    --dark: #171a17;
+    --text: #646a62;
+    --green: #c8f169;
+    --green-dark: #a4ce49;
+    --border: #e6e9e2;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--dark);
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button,
+input {
+    font: inherit;
+}
+/* =========================
+   2. HEADER
+========================= */
+.header {
+    min-height: 82px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+.logo span {
+    color: #7da42e;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.navbar a {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: #729728;
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.search-button {
+    border: none;
+    background: transparent;
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.account-link,
+.cart-link {
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.cart-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    margin-left: 3px;
+    border-radius: 50%;
+    background: var(--green);
+    font-size: 11px;
+}
+/* =========================
+   3. SEARCH BOX
+========================= */
+.search-box {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+}
+.search-box.show {
+    display: flex;
+}
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.search-box button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+/* =========================
+   4. HERO SECTION
+========================= */
+.hero {
+    min-height: 540px;
+    padding: 75px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    background:
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(200, 241, 105, 0.17),
+            transparent 35%
+        ),
+        var(--background);
+}
+.hero-content {
+    max-width: 580px;
+}
+.eyebrow {
+    margin-bottom: 15px;
+    color: #789c2d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.hero h1 {
+    margin-bottom: 22px;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -2.5px;
+}
+.hero h1 span {
+    display: block;
+    color: #83a934;
+}
+.hero-description {
+    max-width: 450px;
+    margin-bottom: 28px;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.9;
+}
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.btn {
+    min-height: 47px;
+    padding: 12px 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+.btn-primary {
+    background: var(--green);
+    color: var(--dark);
+}
+.btn-primary:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    border: 1px solid #d8ddd1;
+    background: transparent;
+}
+.btn-secondary:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+}
+/* Empty hero image area.
+   Add your own image when ready. */
+.hero-image {
+    width: 100%;
+    min-height: 320px;
+}
+/* =========================
+   5. BENEFITS
+========================= */
+.benefits {
+    padding: 30px 9%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.benefit-number {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #eff6df;
+    color: #789c2d;
+    font-size: 12px;
+    font-weight: 800;
+}
+.benefit-item h3 {
+    margin-bottom: 3px;
+    font-size: 13px;
+}
+.benefit-item p {
+    color: var(--text);
+    font-size: 11px;
+}
+/* =========================
+   6. SECTION HEADINGS
+========================= */
+.categories-section,
+.featured-section {
+    padding: 80px 9%;
+}
+.section-heading {
+    margin-bottom: 35px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+}
+.section-heading .eyebrow {
+    margin-bottom: 10px;
+}
+.section-heading h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+.section-heading h2 span {
+    color: #83a934;
+}
+.text-link {
+    color: #668a25;
+    font-size: 12px;
+    font-weight: 800;
+}
+/* =========================
+   7. CATEGORY CARDS
+========================= */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+.category-card {
+    position: relative;
+    min-height: 220px;
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    transition: 0.3s ease;
+}
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: #c5df8b;
+    box-shadow: 0 15px 30px rgba(20, 30, 10, 0.06);
+}
+.category-number {
+    color: #969c92;
+    font-size: 10px;
+    font-weight: 700;
+}
+.category-icon {
+    width: 50px;
+    height: 50px;
+    margin: 25px 0 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #eff6df;
+    color: #789c2d;
+    font-size: 27px;
+}
+.category-card h3 {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.category-card p {
+    color: var(--text);
+    font-size: 11px;
+}
+.category-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 18px;
+    color: #789c2d;
+    font-size: 20px;
+}
+/* =========================
+   8. FEATURED PRODUCTS
+========================= */
+.featured-section {
+    padding-top: 20px;
+}
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.featured-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    transition: 0.3s ease;
+}
+.featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(20, 30, 10, 0.06);
+}
+.product-image {
+    min-height: 210px;
+    background: #eef0e9;
+}
+/* Add your product images inside these areas later. */
+.product-info {
+    padding: 22px;
+}
+.product-category {
+    margin-bottom: 8px;
+    color: #789c2d;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+.product-info h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.product-description {
+    margin-bottom: 17px;
+    color: var(--text);
+    font-size: 12px;
+}
+.product-link {
+    color: #668a25;
+    font-size: 12px;
+    font-weight: 800;
+}
+/* =========================
+   9. CALL TO ACTION
+========================= */
+.cta-section {
+    margin: 0 9% 80px;
+    padding: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-radius: 16px;
+    background: #1c211a;
+    color: var(--white);
+}
+.cta-section .eyebrow {
+    color: var(--green);
+}
+.cta-section h2 {
+    max-width: 580px;
+    margin-bottom: 12px;
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.25;
+}
+.cta-section h2 span {
+    display: block;
+    color: var(--green);
+}
+.cta-section p:not(.eyebrow) {
+    color: #c1c7bd;
+    font-size: 13px;
+}
+/* =========================
+   10. FOOTER
+========================= */
+.footer {
+    padding: 45px 9% 25px;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    text-align: center;
+}
+.footer .logo {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+.footer-description {
+    color: var(--text);
+    font-size: 12px;
+}
+.footer-links {
+    margin: 22px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.footer-links a {
+    color: var(--text);
+    font-size: 12px;
+}
+.footer-links a:hover {
+    color: #719722;
+}
+.copyright {
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    font-size: 11px;
+}
+/* =========================
+   11. RESPONSIVE DESIGN
+========================= */
+@media (max-width: 1100px) {
+    .header {
+        padding: 20px 5%;
+        flex-wrap: wrap;
+    }
+    .navbar {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+    .hero,
+    .benefits,
+    .categories-section,
+    .featured-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 750px) {
+    .header {
+        gap: 18px;
+    }
+    .logo {
+        font-size: 19px;
+    }
+    .header-actions {
+        gap: 12px;
+    }
+    .navbar {
+        gap: 13px;
+    }
+    .navbar a {
+        font-size: 12px;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 46px;
+    }
+    .hero-image {
+        min-height: 180px;
+    }
+    .benefits {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-section {
+        margin: 0 6% 55px;
+        padding: 30px;
+        align-items: start;
+        flex-direction: column;
+    }
+    .search-box {
+        margin: 15px 5%;
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        padding: 18px 5%;
+    }
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .navbar {
+        justify-content: flex-start;
+        gap: 12px 17px;
+    }
+    .hero {
+        padding: 45px 6%;
+    }
+    .hero h1 {
+        font-size: 39px;
+        letter-spacing: -1.5px;
+    }
+    .hero-description {
+        font-size: 14px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .categories-section,
+    .featured-section {
+        padding: 55px 6%;
+    }
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    .category-card {
+        min-height: 190px;
+    }
+    .cta-section {
+        padding: 25px;
+    }
+    .footer-links {
+        gap: 16px;
+    }
+}
